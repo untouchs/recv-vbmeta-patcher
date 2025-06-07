@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f vbmeta.img.lz4 ]; then
-	lz4 -d vbmeta.img.lz4
+	lz4 -d vbmeta.img.lz4 -f vbmeta.img
 fi
 
 ./vbmeta-disable-verification vbmeta.img

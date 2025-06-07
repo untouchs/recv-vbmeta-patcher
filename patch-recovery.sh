@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f recovery.img.lz4 ]; then
-	lz4 -d recovery.img.lz4
+	lz4 -d recovery.img.lz4 -f recovery.img
 fi
 
 cp recovery.img r.img
