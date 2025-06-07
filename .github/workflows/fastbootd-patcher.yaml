@@ -13,8 +13,8 @@ jobs:
 
     - name: Install deps
       run: |
-        sudo apt install -y lz4 tar opennsl python3
-    
+        sudo apt install -y lz4 tar openssl python3
+
     - name: Patch vbmeta
       run: |
         ./patch-vbmeta.sh
