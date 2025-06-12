@@ -5,4 +5,5 @@ This is a combo version of patching Samsung recovery image with fastbootd (https
 * Fork this repository.
 * Upload your vbmeta.img.lz4 and recovery.img.lz4 to the forked repo.
 * Go to `Action` tab, then execute the workflow.
-* You'll find patched recovery with fastbootd and vbmeta in correspoding artifacts section of the workflow run.
+* You'll find patched recovery with fastbootd and vbmeta in correspoding artifacts section of the workflow run in a single file called miniAP.tar.md5.
+* Simply flash that archive with patched Odin to AP section.
