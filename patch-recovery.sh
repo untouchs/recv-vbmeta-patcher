@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f recovery.img.lz4 ]; then
-	lz4 -d recovery.img.lz4 -f recovery.img
+	lz4 -B6 --content-size -f recovery.img.lz4 recovery.img
 fi
 
 cp recovery.img r.img
@@ -39,8 +39,5 @@ cd ..
 
 python3 avbtool extract_public_key --key phh.pem --output phh.pub.bin
 python3 avbtool add_hash_footer --partition_name recovery --partition_size $(wc -c recovery.img |cut -f 1 -d ' ') --image recovery-patched.img --key phh.pem --algorithm SHA256_RSA4096
-mkdir output && cd output
-mv ../recovery-patched.img recovery.img
-tar cvf fastbootd-recovery.tar recovery.img
-md5sum -t fastbootd-recovery.tar >> fastbootd-recovery.tar
-mv fastbootd-recovery.tar ../fastbootd-recovery.tar.md5
+mv recovery-patched.img recovery.img
+rm -rf phh* r.img unpack recovery.img.lz4
