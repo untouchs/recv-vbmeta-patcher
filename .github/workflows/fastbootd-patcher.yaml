@@ -23,10 +23,13 @@ jobs:
       run: |
         ./patch-recovery.sh
 
+    - name: Repack files into .tar.md5
+      run: |
+        ./pack-odin.sh
+
     - name: Upload files
       uses: actions/upload-artifact@v4
       with:
         name: patched-recovery-and-vbmeta
         path: |
-          fastbootd-recovery.tar.md5
-          vbmeta-disabled.tar.md5
+          miniAP.tar.md5
